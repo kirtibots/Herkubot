@@ -1,57 +1,63 @@
-# Heroku Cloud Controller Telegram Bot
+<p align="center">
+<b>𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗠𝗘𝗧𝗛𝗢𝗗𝗦</b>
+</p>
 
-A Telegram control panel for managing your own Heroku apps through the official Heroku Platform API.
+<h3 align="center">
+    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
+</h3>
 
-## Features
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/opk00637-glitch/Kriti-"> <img src="https://www.herokucdn.com/deploy/button.svg"></a></p>
 
-- Start panel styled like the supplied screenshot
-- Separate `/start` and `/help`
-- Owner + Support buttons
-- Link/replace a Heroku API token
-- Apps Manager
-- App formation/dyno view
-- Restart request
-- Dyno scaling
-- Config-var names view (values are masked)
-- Log-session viewer
-- Quick deploy from a public GitHub repository using Heroku App Setups
-- Account unlink
-- SQLite persistence
-- Heroku/Telegram credentials are read from environment variables
+<br />
 
-## Important security note
+---
 
-This project intentionally does NOT collect Heroku passwords, recovery codes, or login OTPs.
+### 🔧 Quick Setup
 
-The `/link` flow accepts a Heroku API token for the user's own account. For a production service used by multiple people, replace token entry with Heroku OAuth 2.0 so users authorize the bot without sending tokens to Telegram. Heroku recommends OAuth for third-party services.
+1. **Upgrade & Update:**
+   ```bash
+   sudo apt-get update && sudo apt-get upgrade -y
+   ```
 
-## Deploy on Heroku
+2. **Install Required Packages:**
+   ```bash
+   sudo apt-get install python3-pip ffmpeg -y
+   ```
+3. **Setting up PIP**
+   ```bash
+   sudo pip3 install -U pip
+   ```
+4. **Installing Node**
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && source ~/.bashrc && nvm install v18
+   ```
+5. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Badnam019/KRITIMUSIC && cd KRITIMUSIC
+   ```
+6. **Install Requirements**
+   ```bash
+   pip3 install -U -r requirements.txt
+   ```
+7. **Create .env  with sample.env**
+   ```bash
+   cp sample.env .env
+   ```
+   - Edit .env with your vars
+8. **Editing Vars:**
+   ```bash
+   vi .env
+   ```
+   - Edit .env with your values.
+   - Press `I` button on keyboard to start editing.
+   - Press `Ctrl + C`  once you are done with editing vars and type `:wq` to save .env or `:qa` to exit editing.
+9. **Installing tmux**
+    ```bash
+    sudo apt install tmux -y && tmux
+    ```
+10. **Run the Bot**
+    ```bash
+    bash start
+    ```
 
-1. Create a Telegram bot with BotFather.
-2. Create a Heroku app for this bot.
-3. Add config vars:
-   - `BOT_TOKEN`
-   - `OWNER_ID`
-   - `OWNER_URL`
-   - `SUPPORT_URL`
-4. Deploy this repository.
-5. Enable the `worker` process.
-
-## Local
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-export BOT_TOKEN="..."
-export OWNER_ID="123456789"
-python bot.py
-```
-
-## GitHub quick deploy
-
-The bot accepts a public GitHub repository URL and submits it to Heroku's `app-setups` API. The repository must contain a valid Heroku deployment structure (for example a Procfile/runtime and application source as appropriate).
-
-## API notes
-
-The implementation uses `https://api.heroku.com` and the v3 Platform API headers. Heroku's current documentation recommends OAuth 2.0 for third-party integrations.
+---
