@@ -1,0 +1,28 @@
+{
+  "name": "Heroku Cloud Controller Bot",
+  "description": "Telegram control panel for your own Heroku apps",
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram bot token",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Telegram owner user ID",
+      "required": true
+    },
+    "OWNER_URL": {
+      "description": "Owner Telegram URL",
+      "required": true
+    },
+    "SUPPORT_URL": {
+      "description": "Support Telegram URL",
+      "required": true
+    }
+  }
+}
